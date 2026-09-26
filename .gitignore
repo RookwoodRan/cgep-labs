@@ -6,6 +6,7 @@
 *.tfvars
 tfplan
 *.tfplan
+plan.json
 crash.log
 
 # OS noise
