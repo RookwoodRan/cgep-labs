@@ -39,3 +39,13 @@ deny message carrying the correct control ID.
 ## Framework
 
 NIST SP 800-53 Rev 5
+
+## Which file targets which cloud
+
+| Control | GCP (Lab 3.3) | AWS (Lab 3.4) |
+|---|---|---|
+| SC-28 Encryption at Rest | `sc28_encryption.rego` | `sc28_encryption_aws.rego` |
+| AC-3 Access Enforcement | `ac3_no_public.rego` | `ac3_no_public_aws.rego` |
+| CM-6 Configuration Settings | `cm6_required_tags.rego` | `cm6_required_tags_aws.rego` |
+
+Control IDs are portable across clouds, but resource types are not. A GCP rule run against an AWS plan passes with zero coverage, so each cloud gets its own variant under the same control ID. `scripts/policy-gate.sh` runs the AWS namespaces only.
